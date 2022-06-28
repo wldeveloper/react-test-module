@@ -2,19 +2,46 @@
   "name": "@bashihui/react-test-module",
   "private": true,
   "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/TestModule.d.ts",
+  "main": "./dist/react-test-module.umd.js",
+  "module": "./dist/react-test-module.es.js",
+  "exports": {
+    ".": {
+      "types": "./dist/TestModule.d.ts",
+      "import": "./dist/react-test-module.es.js",
+      "require": "./dist/react-test-module.umd.js"
+    }
+  },
+  "license": "MIT",
+  "author": "wl",
+  "description": "react test module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wldeveloper/react-test-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wldeveloper/react-test-module/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "postbuild": "node ./scripts/types.js",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
+    "ts-morph": "^15.1.0",
     "typescript": "^4.6.3",
     "vite": "^2.9.9"
   }
