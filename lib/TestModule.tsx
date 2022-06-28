@@ -7,7 +7,7 @@ interface IProps {
   age?: number;
 };
 
-const TestModule: React.FC<IProps> = ({ age = 29 }) => {
+const TestModule: React.FC<IProps> = ({ age = 29, name }) => {
   const [desc, setDesc] = useState<string>('xixixi');
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = useCallback(e => setDesc(e.target.value), []);
   return (
